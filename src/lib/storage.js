@@ -1,4 +1,4 @@
-import {ScratchStorage} from 'scratch-storage';
+import ScratchStorage from 'scratch-storage';
 
 import defaultProject from './default-project';
 
@@ -56,12 +56,15 @@ class Storage extends ScratchStorage {
         };
     }
     setAssetHost (assetHost) {
+      console.log("assetHost: " + assetHost);
         this.assetHost = assetHost;
     }
     getAssetGetConfig (asset) {
         return `${this.assetHost}/internalapi/asset/${asset.assetId}.${asset.dataFormat}/get/`;
+        //return `${this.assetHost}/${asset.assetId}.${asset.dataFormat}`;
     }
     getAssetCreateConfig (asset) {
+      console.log("url: " + `${this.assetHost}/${asset.assetId}.${asset.dataFormat}`);
         return {
             // There is no such thing as updating assets, but storage assumes it
             // should update if there is an assetId, and the asset store uses the

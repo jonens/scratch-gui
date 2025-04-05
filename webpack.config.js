@@ -49,6 +49,13 @@ const baseConfig = new ScratchWebpackConfigBuilder(
         resourceQuery: /^$/, // reject any query string
         type: 'asset' // let webpack decide on the best type of asset
     })
+    .addModuleRule({
+      test: /\.ts$/,
+      use: 'ts-loader',
+      resolve: {
+        extensions: ['.tsx', '.ts', '.js'],
+      }
+    })
     .addPlugin(new webpack.DefinePlugin({
         'process.env.DEBUG': Boolean(process.env.DEBUG),
         'process.env.GA_ID': `"${process.env.GA_ID || 'UA-000000-01'}"`,

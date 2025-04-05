@@ -46,6 +46,12 @@ import gdxforInsetIconURL from './gdxfor/gdxfor-small.svg';
 import gdxforConnectionIconURL from './gdxfor/gdxfor-illustration.svg';
 import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
 
+import toneSynthIconURL from './toneSynth/tonesynth.svg';
+import toneSynthInsetIconURL from './toneSynth/tonesynth-small.svg';
+
+import midiIconURL from './midi/midi-background.svg';
+import midiInsetIconURL from './midi/midi-small.png';
+
 export default [
     {
         name: (
@@ -317,5 +323,43 @@ export default [
             />
         ),
         helpLink: 'https://scratch.mit.edu/vernier'
-    }
+    },
+    {
+        name: 'ToneSynth Music Synthesis',
+        extensionId: 'toneSynth',
+        collaborator: 'Ensminger',
+        iconURL: toneSynthIconURL,
+        insetIconURL: toneSynthInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Create modular synth sounds"
+                description="Description for the ToneSynth extension"
+                id="gui.extension.toneSynth.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: false,
+        internetConnectionRequired: false,
+        launchPeripheralConnectionFlow: false,
+    },
+    {
+        name: 'MIDI input extension',
+        extensionId: 'midi',
+        collaborator: 'Ensminger',
+        iconURL: midiIconURL,
+        insetIconURL: midiInsetIconURL,
+        description: (
+            <FormattedMessage
+                defaultMessage="Connect MIDI devices"
+                description="Description for the MIDI extension"
+                id="gui.extension.midi.description"
+            />
+        ),
+        featured: true,
+        disabled: false,
+        bluetoothRequired: false,
+        internetConnectionRequired: false,
+        launchPeripheralConnectionFlow: false,
+    },
 ];
